@@ -14,14 +14,14 @@ export default function LoginForm() {
   return (
     <>
     <div className="h-100vh flex items-center justify-center p-2 sm:p-4 ">
-      <Card className="w-full max-w-lg shadow-lg rounded-xl border-0">
+      <Card className="w-full max-w-lg  rounded-xl border-0">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl font-medium relative top-5">Login</CardTitle>
+          <CardTitle className="md:text-2xl text-xl font-medium relative top-5">Login</CardTitle>
         </CardHeader>
         <CardContent className="p-4 sm:p-6 space-y-6">
           <form className="space-y-4 ">
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-xs sm:text-sm">Email</Label>
+              <Label htmlFor="email" className="text-[10px] sm:text-sm">Email</Label>
               <div className="relative">
                 <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
@@ -29,7 +29,7 @@ export default function LoginForm() {
                   name="email"
                   type="email"
                   placeholder="your@email.com"
-                  className="pl-9 text-sm sm:text-base py-3 md:w-[400px] sm:py-4 placeholder:text-[12px] sm:placeholder:text-sm"
+                  className="pl-9 text-sm sm:text-base py-3 w-[300px] md:w-[400px] sm:py-4 placeholder:text-[12px] sm:placeholder:text-sm"
                 />
               </div>
             </div>
