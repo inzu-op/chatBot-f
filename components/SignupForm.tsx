@@ -15,7 +15,7 @@ export default function SignupForm() {
     <>
     
       <div className="h-100vh flex items-center justify-center p-1 overflow-x-hidden">
-        <Card className="w-full max-w-xs sm:max-w-md md:max-w-lg  rounded-xl  ">
+        <Card className="w-full max-w-lg  rounded-xl border-0 ">
           <CardHeader className="text-center">
             <CardTitle className="md:text-2xl text-xl font-medium relative top-5">
               Create an Account
