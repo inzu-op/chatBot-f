@@ -14,10 +14,10 @@ export default function SignupForm() {
   return (
     <>
     
-      <div className="h-100vh flex items-center justify-center p-2 overflow-x-hidden">
-        <Card className="w-full max-w-xs sm:max-w-md md:max-w-lg shadow-lg rounded-xl border-0 ">
+      <div className="h-100vh flex items-center justify-center p-1 overflow-x-hidden">
+        <Card className="w-full max-w-xs sm:max-w-md md:max-w-lg  rounded-xl  ">
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl font-medium relative top-5">
+            <CardTitle className="md:text-2xl text-xl font-medium relative top-5">
               Create an Account
             </CardTitle>
           </CardHeader>
@@ -25,25 +25,14 @@ export default function SignupForm() {
             <form className="space-y-4" action={signup}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-2">
-                  <Label htmlFor="first-name" className="text-xs sm:text-sm">First Name</Label>
+                  <Label htmlFor="Name" className="text-[10px] sm:text-sm">Name</Label>
                   <Input
-                    id="first-name"
-                    name="first-name"
+                    id="Name"
+                    name="Name"
                     type="text"
                     placeholder="John"
                     required
-                    className="text-xs sm:text-sm placeholder:text-[10px] md:w-[400px] sm:placeholder:text-xs"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="last-name" className="text-xs sm:text-sm">Last Name</Label>
-                  <Input
-                    id="last-name"
-                    name="last-name"
-                    type="text"
-                    placeholder="Doe"
-                    required
-                    className="text-xs sm:text-sm placeholder:text-[10px] sm:placeholder:text-xs"
+                    className="text-xs w-[280px] sm:text-sm placeholder:text-[10px] md:w-[400px] sm:placeholder:text-xs"
                   />
                 </div>
               </div>
@@ -56,7 +45,7 @@ export default function SignupForm() {
                     name="email"
                     type="email"
                     placeholder="your@email.com"
-                    className="pl-9 text-xs sm:text-sm placeholder:text-[10px] sm:placeholder:text-xs"
+                    className="pl-9 text-[10px] sm:text-sm placeholder:text-[10px] sm:placeholder:text-xs"
                     required
                   />
                 </div>
@@ -70,7 +59,7 @@ export default function SignupForm() {
                     name="password"
                     type="password"
                     placeholder="••••••••"
-                    className="pl-9 text-xs sm:text-sm placeholder:text-[10px] sm:placeholder:text-xs"
+                    className="pl-9 text-[10px] sm:text-sm placeholder:text-[10px] sm:placeholder:text-xs"
                     required
                   />
                 </div>
