@@ -277,8 +277,8 @@ export default function ChatPage() {
             <div className="flex flex-col items-center justify-center h-full space-y-4 md:space-y-6">
               <div className="text-center space-y-1 md:space-y-2">
                 <Sparkles className="h-8 w-8 md:h-12 md:w-12 text-primary mx-auto" />
-                <h2 className="text-sm md:text-2xl font-bold">Welcome to StudentBot</h2>
-                <p className="text-[13px] md:text-base text-muted-foreground max-w-xs md:max-w-md mx-auto">
+                <h2 className="text-lg md:text-2xl font-bold">Welcome to Student-Assistant</h2>
+                <p className="text-[14px] md:text-base text-muted-foreground max-w-xs md:max-w-md mx-auto">
                   Your AI companion for health and career guidance. Ask me anything about wellness, career paths, study tips, or personal development.
                 </p>
               </div>
@@ -330,7 +330,7 @@ export default function ChatPage() {
               <Send className="h-4 w-4 md:h-6 md:w-6" />
             </Button>
           </form>
-          <p className="text-xs text-muted-foreground text-center mt-2">
+          <p className="text-[8px] text-muted-foreground text-center mt-2">
             StudentBot can make mistakes. Consider checking important information.
           </p>
         </div>
