@@ -56,7 +56,7 @@ export default function ChatPage() {
     if (!userId) return;
 
     // Create a new chat in your backend
-    const response = await fetch('http://localhost:3001/api/chats', {
+    const response = await fetch('https://chatbot-b45.onrender.com/api/chats', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -85,7 +85,7 @@ export default function ChatPage() {
     const { data: { session } } = await supabase.auth.getSession();
     const userId = session?.user?.id;
     if (!userId) return;
-    const response = await fetch('http://localhost:3001/api/chats', {
+    const response = await fetch('https://chatbot-b45.onrender.com/api/chats', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -106,7 +106,7 @@ export default function ChatPage() {
     const fetchMessages = async () => {
       localStorage.setItem('chat_id', chatId)
       try {
-        const response = await fetch(`http://localhost:3001/api/messages?chat_id=${chatId}`)
+        const response = await fetch(`https://chatbot-b45.onrender.com/api/messages?chat_id=${chatId}`)
         if (response.ok) {
           const data = await response.json()
           setMessages(data.messages || [])
@@ -155,7 +155,7 @@ export default function ChatPage() {
     ]).select();
 
     try {
-      const res = await fetch("http://localhost:3001/api/chat", {
+      const res = await fetch("https://chatbot-b45.onrender.com/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -184,7 +184,7 @@ export default function ChatPage() {
       setInput("")
 
       // Store bot message
-      await fetch('http://localhost:3001/api/messages', {
+      await fetch('https://chatbot-b45.onrender.com/api/messages', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ chat_id: chatId, sender: 'bot', content: botMessage }),
@@ -213,7 +213,7 @@ export default function ChatPage() {
     const fetchAndEnsureChat = async () => {
       // This logic is now simplified to only fetch existing chats
       // and not create one automatically on load.
-      const response = await fetch(`http://localhost:3001/api/chats?user_id=${id}`);
+      const response = await fetch(`https://chatbot-b45.onrender.com/api/chats?user_id=${id}`);
       const data = await response.json();
       if (data.chats && data.chats.length > 0) {
         // If there are chats, you might want to load the most recent one

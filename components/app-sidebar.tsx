@@ -54,7 +54,7 @@ export function AppSidebar() {
 
     if (user?.id) {
       try {
-        const response = await fetch(`http://localhost:3001/api/chats?user_id=${user.id}`);
+        const response = await fetch(`https://chatbot-b45.onrender.com/api/chats?user_id=${user.id}`);
         if (response.ok) {
           const data = await response.json();
           setChats(data.chats || []);
@@ -97,7 +97,7 @@ export function AppSidebar() {
   };
 
   const handleDeleteChat = async (chatId: string) => {
-    await fetch(`http://localhost:3001/api/chats/${chatId}`, { method: 'DELETE' });
+    await fetch(`https://chatbot-b45.onrender.com/api/chats/${chatId}`, { method: 'DELETE' });
     setDeleteDialogOpen(false);
     setChatToDelete(null);
     fetchUserAndChats();

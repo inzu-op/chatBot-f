@@ -35,7 +35,7 @@ export default function ChatPage() {
     const fetchMessages = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch(`http://localhost:3001/api/messages?chat_id=${chatId}`);
+        const response = await fetch(`https://chatbot-b45.onrender.com/api/messages?chat_id=${chatId}`);
         if (response.ok) {
           const data = await response.json();
           setMessages(data.messages || []);
@@ -62,7 +62,7 @@ export default function ChatPage() {
 
     // If this is the first message, create the chat record and set the title
     if (messages.length === 0) {
-      await fetch("http://localhost:3001/api/chats", {
+      await fetch("https://chatbot-b45.onrender.com/api/chats", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ chatId: chatId, title: input.trim(), userId: id }),
@@ -71,14 +71,14 @@ export default function ChatPage() {
     }
 
     // Store user message in backend
-    await fetch("http://localhost:3001/api/messages", {
+    await fetch("https://chatbot-b45.onrender.com/api/messages", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ chat_id: chatId, sender: "user", content: input.trim() }),
     });
 
     try {
-      const res = await fetch(`http://localhost:3001/api/chat`, {
+      const res = await fetch(`https://chatbot-b45.onrender.com/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -109,7 +109,7 @@ export default function ChatPage() {
       setInput("");
 
       // Store bot message in backend
-      await fetch("http://localhost:3001/api/messages", {
+      await fetch("https://chatbot-b45.onrender.com/api/messages", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ chat_id: chatId, sender: "bot", content: botMessage }),
